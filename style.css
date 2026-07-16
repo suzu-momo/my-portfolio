@@ -128,6 +128,16 @@ body {
   
 }
 
+footer {
+    text-align: center;
+}
+
+
+footer p {
+    color: rgb(71, 70, 70);
+    float: center;
+}
+
 /* --- レスポンシブ対応（スマホ表示用の調整） --- */
 @media (max-width: 768px) {
   body {
