@@ -1,0 +1,164 @@
+/* --- 全体のリセットと共通設定 --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  background-image: url("images/sirokabegami.jpg"); 
+  background-size: cover;      /* 画面全体を覆うように引き伸ばす */
+  background-position: center;  /* 画像の中心を基準にする */
+  background-attachment: fixed; /* スクロールしても背景を固定する（お好みで） */
+  min-height: 100vh;
+  color: #333333;
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 960px; /* カンプのバランスに合わせた最大横幅 */
+  margin: 0 auto;
+}
+
+/* --- タイトル部分 --- */
+.header {
+  text-align: center;
+  margin-bottom: 120px; /* カンプの広い余白を再現 */
+}
+
+.header h1 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #E8B688; /* 上品なゴールド・ベージュ系 */
+  letter-spacing: 0.05em;
+}
+
+/* --- 各セクションの白いボックス --- */
+.section {
+  background-color: #FAF6F8; /* ほんのりピンクがかった上品な白 */
+  padding: 40px 50px 60px 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* 軽めの影で馴染ませる */
+}
+
+/* 見出し（Work, About, Contact） */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #E8B688;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* 見出しの横にある直線 */
+.section-title::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background-color: #E8B688;
+  margin-left: 20px;
+  opacity: 0.7;
+}
+
+/* プレースホルダー画像（グレーの四角）の共通設定 */
+.image-placeholder {
+  background-color: #DADADA;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 正方形を維持 */
+}
+
+/* --- Work セクション --- */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列に並べる */
+  gap: 30px;
+}
+
+.work-item .description {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: rgb(71, 70, 70);
+  
+}
+
+/* --- About セクション --- */
+.about-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgb(71, 70, 70);
+}
+
+.about-image {
+  flex: 1;
+  max-width: 320px; /* 画像が大きくなりすぎないように制限 */
+}
+
+.flex-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 0.85rem;
+}
+
+/* --- Contact セクション --- */
+.contact-content {
+  padding-top: 10px;
+}
+
+.contact-content .email {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: rgb(71, 70, 70);
+  
+}
+
+/* --- レスポンシブ対応（スマホ表示用の調整） --- */
+@media (max-width: 768px) {
+  body {
+    padding: 40px 15px;
+  }
+  
+  .header {
+    margin-bottom: 60px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .section {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr; /* スマホでは縦1列に */
+    gap: 40px;
+  }
+
+  .about-flex {
+    flex-direction: column-reverse; /* スマホではテキストを上、画像を下に */
+    gap: 30px;
+  }
+  
+  .about-image {
+    max-width: 100%;
+    width: 100%;
+  }
+}
